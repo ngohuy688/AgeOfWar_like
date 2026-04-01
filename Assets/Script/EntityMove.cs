@@ -2,18 +2,19 @@ using UnityEngine;
 
 public class EntityMove : MonoBehaviour
 {
-    [SerializeField] private Transform enemyBuilding;
-    [SerializeField] private AllyData data;
-    [SerializeField] private BoxCollider2D box;
+    [SerializeField] private EntityBaseData data;
+    [SerializeField] private Transform attackPoint;
     [SerializeField] private LayerMask layer;
 
-    Vector2 velocity;
-    float skinWidth = 0.02f;
+    public Vector2 velocity;
+    public RaycastHit2D[] hits = new RaycastHit2D[200];
+    public int hitCount;
+    Vector2 rayPoint;
 
     void Update()
     {
-        velocity.x = data.movementSpeed * data.moveDirection * Time.deltaTime;
-        Move(velocity);
+        velocity.x = data.movementSpeed * data.moveDirection;
+        Move(velocity * Time.deltaTime);
     }
 
     void Move(Vector2 move)
@@ -24,16 +25,15 @@ public class EntityMove : MonoBehaviour
 
     void HandleHorizontalCollision(ref Vector2 move)
     {
-        RaycastHit2D hit = Physics2D.BoxCast(
-            box.bounds.center,
-            box.bounds.size,
-            0,
+        hitCount = Physics2D.RaycastNonAlloc(
+            attackPoint.position,
             Vector2.right * data.moveDirection,
-            Mathf.Abs(move.x) + skinWidth,
+            hits,
+            data.attackRange.y,
             layer
         );
-
-        if (hit)
+        
+        if (hitCount > 0)
         {
             move.x = 0;
             velocity.x = 0;

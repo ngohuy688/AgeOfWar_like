@@ -7,5 +7,4 @@ menuName = "Data/Enemy", order = 1)]
 public class EnemyData : EntityBaseData
 {
     public int goldDrop;
-    public float timeApearance;
 }

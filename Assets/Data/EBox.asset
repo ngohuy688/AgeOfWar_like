@@ -9,14 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a8b669b8aefcea4cb86c0e85824fe5d, type: 3}
-  m_Name: Data
+  m_Script: {fileID: 11500000, guid: 8254b0f1ccaf36342900068ad62ab770, type: 3}
+  m_Name: EBox
   m_EditorClassIdentifier: 
-  healthPoint: 100
-  movementSpeed: 5
-  moveDirection: -1
-  attackInterval: 1
-  attackSpeed: 1
-  attackRange: 1
-  summonCost: 1
-  summonCoolDown: 1
+  damage: 10
+  healthPoint: 20
+  movementSpeed: 4
+  moveDirection: 1
+  attackInterval: 3
+  attackSpeed: 3
+  attackRange: {x: 4, y: 5}
+  knockBack: 1
+  AOE: 1
+  goldDrop: 1
