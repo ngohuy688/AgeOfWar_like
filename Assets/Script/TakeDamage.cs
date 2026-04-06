@@ -1,8 +1,10 @@
-using Unity.VisualScripting;
+using System;
 using UnityEngine;
+
 
 public class TakeDamage : MonoBehaviour, IDamageTaken
 {
+    public static event Action<TakeDamage> OnEnemyDead;
     public EntityBaseData data;
     private int currentHP;
     public GameObject prefab;
@@ -30,12 +32,13 @@ public class TakeDamage : MonoBehaviour, IDamageTaken
 
     void Die()
     {
+        OnEnemyDead?.Invoke(this);
         EnemyPoolManager.Instance.Return(prefab, gameObject);
     }
 
     void PushBack(int pushBackRate)
     {
-        int i = Random.Range(1, 101);
+        int i = UnityEngine.Random.Range(1, 101);
         if(i > pushBackRate) return;
         transform.Translate(new Vector2(-data.moveDirection, 0));
     }

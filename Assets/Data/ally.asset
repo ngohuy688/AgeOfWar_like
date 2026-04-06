@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ally
   m_EditorClassIdentifier: 
   damage: 10
-  healthPoint: 11
+  healthPoint: 30
   movementSpeed: 3
   moveDirection: -1
   attackInterval: 2
@@ -23,5 +23,6 @@ MonoBehaviour:
   AOE: 1
   pushBack: 1
   pushBackRate: 100
+  icon: {fileID: 21300000, guid: 5c4d6a3e89e51f24d98be3b936946f60, type: 3}
   summonCost: 2
   summonCoolDown: 2

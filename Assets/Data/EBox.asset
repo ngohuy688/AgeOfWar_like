@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EBox
   m_EditorClassIdentifier: 
   damage: 10
-  healthPoint: 20
+  healthPoint: 30
   movementSpeed: 4
   moveDirection: 1
   attackInterval: 3
@@ -21,4 +21,6 @@ MonoBehaviour:
   attackRange: {x: 4, y: 5}
   knockBack: 1
   AOE: 1
+  pushBack: 0
+  pushBackRate: 0
   goldDrop: 1

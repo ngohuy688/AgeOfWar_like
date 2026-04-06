@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class EntityBaseData : ScriptableObject
@@ -16,4 +17,5 @@ public class EntityBaseData : ScriptableObject
     public bool AOE;
     public bool pushBack;
     public int pushBackRate;
+    public Sprite icon;
 }

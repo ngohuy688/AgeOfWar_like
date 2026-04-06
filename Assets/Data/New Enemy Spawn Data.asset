@@ -17,4 +17,4 @@ MonoBehaviour:
   spawnCount: 2
   minDelay: 3
   maxDelay: 3
-  infinite: 0
+  infinite: 1
